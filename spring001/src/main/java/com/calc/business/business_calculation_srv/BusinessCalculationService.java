@@ -5,8 +5,12 @@ import java.util.Arrays;
 
 @Component
 public class BusinessCalculationService {
-    @Autowired
     DataService dataService;
+
+    public BusinessCalculationService(DataService dataService){
+        super();
+        this.dataService = dataService;
+    }
 
     public int findMax(){
         return Arrays.stream(dataService.retrieveData())
