@@ -1,0 +1,30 @@
+@startuml
+class com.calc.business.business_calculation_srv.BusinessCalculationService {
+~ DataService dataService
++ int findMax()
+}
+
+
+class com.calc.business.business_calculation_srv.MySQLDataService {
++ int[] retrieveData()
+}
+
+class com.calc.business.business_calculation_srv.BusinessCalculationSrvApplication {
++ {static} void main(String[])
+}
+
+class com.calc.business.business_calculation_srv.ProjectConfig {
+}
+class com.calc.business.business_calculation_srv.MongoDbDataService {
++ int[] retrieveData()
+}
+
+interface com.calc.business.business_calculation_srv.DataService {
+~ int[] retrieveData()
+}
+
+
+
+com.calc.business.business_calculation_srv.DataService <|.. com.calc.business.business_calculation_srv.MySQLDataService
+com.calc.business.business_calculation_srv.DataService <|.. com.calc.business.business_calculation_srv.MongoDbDataService
+@enduml
